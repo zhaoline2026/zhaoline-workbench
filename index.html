@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<title>zhaoline工作台</title>
+<meta name="description" content="zhaoline工作台 —— 内容创作 · 英语学习 · 健康增肌，一体化个人工作台">
+<meta name="theme-color" content="#e8ede0">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<meta name="mobile-web-app-capable" content="yes">
+<meta name="apple-mobile-web-app-status-bar-style" content="default">
+<meta name="apple-mobile-web-app-title" content="zhaoline">
+<link rel="manifest" href="manifest.webmanifest?v=6">
+<link rel="icon" type="image/png" href="icons/icon-192.png?v=6">
+<link rel="apple-touch-icon" href="icons/apple-touch-icon.png?v=6">
+<link rel="stylesheet" href="css/style.css?v=6">
+</head>
+<body>
+
+<div id="bgLay" aria-hidden="true"></div>
+<div id="app">
+  <aside id="side">
+    <div class="brand">
+      <img id="brandIcon" src="icons/icon-192.png" alt="zhaoline" class="brandImg">
+      <div class="brandTxt">
+        <div class="brandName">zhaoline工作台</div>
+        <div class="brandSub">· 樱桃每日运转 ·</div>
+      </div>
+    </div>
+    <nav id="sideNav" aria-label="功能导航"></nav>
+    <div class="sideFoot">
+      <button class="sideBtn" data-go="lib"><span class="ic">🗂️</span><span>项目库（整合）</span></button>
+      <button class="sideBtn" data-go="settings"><span class="ic">⚙️</span><span>工作台设置</span></button>
+    </div>
+  </aside>
+
+  <div id="main">
+    <header id="top">
+      <button id="menuBtn" aria-label="打开菜单">☰</button>
+      <div id="topTtl">
+        <h1 id="ttlName">To do list</h1>
+        <span id="ttlSub"></span>
+      </div>
+      <div id="headActs"></div>
+    </header>
+    <div id="view"></div>
+  </div>
+</div>
+
+<div id="overlay"></div>
+<div id="toastBox"></div>
+<div id="modalRoot"></div>
+
+<script src="js/base.js?v=6"></script>
+<script src="js/core.js?v=6"></script>
+<script src="js/cal.js?v=6"></script>
+<script src="js/english.js?v=6"></script>
+<script src="js/gym.js?v=6"></script>
+<script src="js/main.js?v=6"></script>
+</body>
+</html>
