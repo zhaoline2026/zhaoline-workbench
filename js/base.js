@@ -97,13 +97,14 @@ window.Z = (function(){
   let cur='todo';
   function regView(id,render,mount){ views[id]=render; if(mount)mounts[id]=mount; }
   const EXTRA_NAME = { lib:'项目库', settings:'工作台设置' };
-  function fallbackView(id,arg,failed){
+  function fallbackView(id,arg,failed,errMsg){
     const meta=byId[id];
     const nm=(meta&&meta.name)||EXTRA_NAME[id]||id;
     const ic=(meta&&meta.icon)||'🍒';
     const wr=window.Z.curWrap; if(!wr) return {title:nm,sub:'',acts:''};
     wr.innerHTML='<div class="empty"><div class="big">'+ic+'</div><div>'+nm+'</div>'
       +'<div class="muted mt6">'+(failed?'这一栏加载时出了点小问题':'这一栏还没有准备好')+'，点下面重试一下就好</div>'
+      +(errMsg?'<div class="muted" style="font-size:11px;margin-top:8px;word-break:break-all">错误：'+esc(errMsg)+'</div>':'')
       +'<div class="row" style="justify-content:center;margin-top:14px"><button class="btn pri" data-rerun="1" style="margin-right:8px">🔄 重新进入</button>'
       +'<button class="btn ghost" data-home="1">📝 回 To do list</button></div></div>';
     wr.onclick=e=>{
@@ -127,12 +128,12 @@ window.Z = (function(){
     const meta=byId[id];
     wr.style.setProperty('--c', meta?meta.c:'#7d9471');
     // 3) 渲染（任何模块出错都不再“卡死/静默回退”，而是显示可重试的提示页）
-    let info={}, failed=false;
+    let info={}, failed=false, errMsg='';
     if(views[id]){
       try{ info=views[id](wr,arg)||{}; }
-      catch(err){ failed=true; console.error('[zhaoline:render error]', id, err); }
-    } else { failed=false; }
-    if(failed || !views[id]) info=fallbackView(id,arg,failed);
+      catch(err){ failed=true; errMsg=(err&&err.message)?err.message:String(err); console.error('[zhaoline:render error]', id, err); }
+    }
+    if(failed || !views[id]) info=fallbackView(id,arg,failed,errMsg);
     // 4) 更新标题与头部动作（视图渲染抛错也不影响这里）
     $('#ttlName').textContent=info.title||(meta?meta.name:EXTRA_NAME[id]||id);
     $('#ttlSub').textContent=info.sub||'';
@@ -202,7 +203,7 @@ window.Z = (function(){
       b.style.setProperty('--c-deep',m.c);
       b.innerHTML='<span class="no">'+m.no+'</span><span class="nic">'+m.icon+'</span><span class="nm">'+m.name+'</span><span class="badge" id="bdg-'+m.id+'"></span>';
       // 直接绑定点击（不依赖全局事件委托），保证“无论点什么都能跳转”
-      b.onclick=ev=>{ ev.stopPropagation(); go(m.id); };
+      b.onclick=ev=>{ ev.stopPropagation(); try{ toast('→ '+m.name); }catch(_e){} go(m.id); };
       nav.appendChild(b);
     });
   }
