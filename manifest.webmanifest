@@ -1,0 +1,17 @@
+{
+  "name": "zhaoline工作台",
+  "short_name": "zhaoline",
+  "description": "zhaoline工作台 · 内容创作(选题灵感/爆款拆解/文案/热点/复盘/日历排期) + 英语学习(听说读写) + 健康增肌 的一体化个人工作台",
+  "lang": "zh-CN",
+  "start_url": "./index.html",
+  "scope": "./",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#e8ede0",
+  "theme_color": "#7d9471",
+  "icons": [
+    { "src": "icons/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "icons/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "icons/maskable-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" }
+  ]
+}
