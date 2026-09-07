@@ -213,8 +213,8 @@ function genView(mod){
       if(e.target.id==='q'){ const v=e.target.value, pos=e.target.selectionStart; uiState[mod].q=v; Z.views[mod](root,arg); const q2=document.getElementById('q'); if(q2){ q2.focus(); try{q2.setSelectionRange(pos,pos);}catch(_){ } } return; }
     });
     root.onclick=e=>{
-      const stB=e.target.closest('[data-st]'); if(stB){ uiState[mod].st=stB.dataset.st; Z.views[mod]?.(root,arg); return; }
-      const del=e.target.closest('[data-del]'); if(del){ e.stopPropagation(); const it=getItem(mod,del.closest('.mCard').dataset.id); Z.confirmBox('删除「'+Z.esc(itemName(it))+'」？',{danger:true}).then(y=>{ if(y){ saveList(mod,list(mod).filter(x=>x.id!==it.id)); clearIncomingLinks(mod,it.id); refreshBadges(); Z.views[mod]?.(root,arg); } }); return; }
+      const stB=e.target.closest('[data-st]'); if(stB){ uiState[mod].st=stB.dataset.st; if(Z.views[mod]) Z.views[mod](root,arg); return; }
+      const del=e.target.closest('[data-del]'); if(del){ e.stopPropagation(); const it=getItem(mod,del.closest('.mCard').dataset.id); Z.confirmBox('删除「'+Z.esc(itemName(it))+'」？',{danger:true}).then(y=>{ if(y){ saveList(mod,list(mod).filter(x=>x.id!==it.id)); clearIncomingLinks(mod,it.id); refreshBadges(); if(Z.views[mod]) Z.views[mod](root,arg); } }); return; }
       const lk=e.target.closest('[data-link]'); if(lk){ e.stopPropagation(); const it=getItem(mod,lk.closest('.mCard').dataset.id); openLinkPicker(mod,it); return; }
       const jm=e.target.closest('[data-jump]'); if(jm){ e.stopPropagation(); const id=jm.dataset.id, m=jm.dataset.m; if(m&&Z.byId[m]&&SCHEMA[m]){ Z.go(m,{openId:id}); return; } }
       const nb=e.target.closest('[data-new]'); if(nb){ openEditor(mod,null); return; }
