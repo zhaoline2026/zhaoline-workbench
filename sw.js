@@ -1,5 +1,5 @@
 /* zhaoline工作台 Service Worker — 网络优先 + 离线回退（保证更新即时生效） */
-const CACHE='zlw-v3';
+const CACHE='zlw-v4';
 const ASSETS=[
   './','./index.html','./manifest.webmanifest',
   './css/style.css',
