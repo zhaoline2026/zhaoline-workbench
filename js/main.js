@@ -2,6 +2,25 @@
 (function(){
 const Z=window.Z;
 
+/* 诊断浮条：JS 报错时在顶部显示，方便真机排查（不吞错，仅提示） */
+(function(){
+  let bar=null, shown=[];
+  function show(msg){
+    try{
+      if(!bar){
+        bar=document.createElement('div');
+        bar.style.cssText='position:fixed;top:0;left:0;right:0;z-index:9999;background:#b4534a;color:#fff;font-size:12px;padding:6px 10px;line-height:1.4;word-break:break-all;max-height:40vh;overflow:auto;box-shadow:0 2px 8px rgba(0,0,0,.2)';
+        bar.addEventListener('click',()=>{ if(bar){ bar.remove(); bar=null; } });
+        document.body.appendChild(bar);
+      }
+      shown.push(msg); if(shown.length>3) shown.shift();
+      bar.textContent='⚠️ 页面脚本出错（点击关闭）：' + shown.join(' ｜ ');
+    }catch(_e){}
+  }
+  window.addEventListener('error',e=>{ show((e&&e.message)||String(e&&e.error||'')||'unknown error'); });
+  window.addEventListener('unhandledrejection',e=>{ const r=e&&e.reason; show('Promise: '+((r&&r.message)?r.message:String(r||''))); });
+})();
+
 function init(){
   Z.applyBg();
   Z.buildNav();
