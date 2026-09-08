@@ -192,19 +192,43 @@ window.Z = (function(){
   }
   function readAsDataURL(file){ return new Promise((res,rej)=>{ const r=new FileReader(); r.onload=()=>res(r.target.result); r.onerror=rej; r.readAsDataURL(file); }); }
 
+  /* ---------- 导航兜底：原生 hash 路由 + 全局点击捕获（双保险，兼容 iOS 各种点击问题） ---------- */
+  function validTarget(id){ return !!(byId[id] || EXTRA_NAME[id] || views[id]); }
+  function targetFromHash(){
+    const m=(location.hash||'').match(/^#\/([A-Za-z0-9]+)/);
+    const id=m?m[1]:'';
+    return validTarget(id)?id:'';
+  }
+  // hash 变化（原生 <a href="#/xxx"> 的默认跳转 / 前进后退）→ 统一走 go()
+  window.addEventListener('hashchange',function(){
+    const id=targetFromHash();
+    if(id) go(id);
+  });
+  // 全局 capture 点击：所有带 data-go 的元素（导航、侧栏按钮、模块内跳转）都触发 go()
+  // capture 阶段在 stopPropagation 之前执行，任何情况下都不会被“吞掉”
+  document.addEventListener('click',function(e){
+    const el = e.target && e.target.closest ? e.target.closest('[data-go]') : null;
+    if(!el || e.defaultPrevented) return;
+    const id = el.getAttribute('data-go');
+    if(!id) return;
+    e.preventDefault();
+    const meta=byId[id]; const nm=(meta&&meta.name)||EXTRA_NAME[id]||id;
+    try{ if(el.closest && el.closest('#side')) toast('→ '+nm); }catch(_e){}
+    go(id);
+  }, true);
+
   /* ---------- 侧栏渲染（main.js 调用） ---------- */
   function buildNav(){
     const nav=$('#sideNav'); nav.innerHTML='';
     const g=document.createElement('div'); g.className='navGroup'; g.textContent='我的状态栏'; nav.appendChild(g);
     MODS.forEach(m=>{
-      const b=document.createElement('button');
-      b.className='navItem'; b.dataset.go=m.id;
-      b.style.setProperty('--c-soft',rgba(m.c,.16));
-      b.style.setProperty('--c-deep',m.c);
-      b.innerHTML='<span class="no">'+m.no+'</span><span class="nic">'+m.icon+'</span><span class="nm">'+m.name+'</span><span class="badge" id="bdg-'+m.id+'"></span>';
-      // 直接绑定点击（不依赖全局事件委托），保证“无论点什么都能跳转”
-      b.onclick=ev=>{ ev.stopPropagation(); try{ toast('→ '+m.name); }catch(_e){} go(m.id); };
-      nav.appendChild(b);
+      // 原生 <a href="#/模块"> 链接：即使 JS 事件绑定全部失效，浏览器原生 hash 跳转也能进入模块
+      const a=document.createElement('a');
+      a.className='navItem'; a.dataset.go=m.id; a.href='#/'+m.id;
+      a.style.setProperty('--c-soft',rgba(m.c,.16));
+      a.style.setProperty('--c-deep',m.c);
+      a.innerHTML='<span class="no">'+m.no+'</span><span class="nic">'+m.icon+'</span><span class="nm">'+m.name+'</span><span class="badge" id="bdg-'+m.id+'"></span>';
+      nav.appendChild(a);
     });
   }
 
