@@ -50,6 +50,9 @@ function init(){
   if('serviceWorker' in navigator && (location.protocol==='https:'||location.hostname==='localhost'||location.hostname==='127.0.0.1')){
     navigator.serviceWorker.register('sw.js').catch(()=>{});
   }
+
+  /* 云同步（GitHub Gist）—— 若已配置 token，自动启动后台轮询 */
+  try{ if(Z.sync){ Z.sync.start(); } }catch(_e){}
 }
 if(document.readyState==='loading') document.addEventListener('DOMContentLoaded',init); else init();
 })();
