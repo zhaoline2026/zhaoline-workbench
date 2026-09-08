@@ -72,7 +72,18 @@ const VOCAB=[
 ['aisle','aɪl','aɪl','n.','(货架/座位)通道','Walk down the aisle to find the milk.','沿着通道走就能找到牛奶。'],
 ['cart','kɑːrt','kɑːt','n.','购物车(美)','Could you hold my cart for a second?','你能帮我看一下购物车吗？'],
 ['refund','ˈriːfʌnd','ˈriːfʌnd','n./v.','退款','I’d like a refund for this shirt.','这件衬衫我想退款。'],
-['on sale','ɒn seɪl','ɒn seɪl','ph.','打折促销','These shoes are on sale this week.','这双鞋本周在打折。']]},
+['on sale','ɒn seɪl','ɒn seɪl','ph.','打折促销','These shoes are on sale this week.','这双鞋本周在打折。'],
+['price tag','praɪs tæɡ','praɪs tæɡ','n.','价签','The price tag says 199.','价签上写着 199。'],
+['try on','traɪ ɒn','traɪ ɒn','ph.','试穿','Can I try this on?','我能试穿一下吗？'],
+['size','saɪz','saɪz','n.','尺码','Do you have this in a medium?','这件有中码吗？'],
+['checkout','ˈtʃekaʊt','ˈtʃekaʊt','n.','结账台','The checkout is on the second floor.','结账台在二楼。'],
+['counter','ˈkaʊntər','ˈkaʊntə(r)','n.','柜台','Pay at the counter, please.','请到柜台���款。'],
+['warranty','ˈwɔːrənti','ˈwɒrənti','n.','保修单','Does this come with a warranty?','这个有保修吗？'],
+['exchange','ɪksˈtʃeɪndʒ','ɪksˈtʃeɪndʒ','v.','换货','Can I exchange it for another color?','我能换一个颜色吗？'],
+['voucher','ˈvaʊtʃər','ˈvaʊtʃə(r)','n.','代金券','Use this voucher for 50 off.','用这张代金券减 50 元。'],
+['out of stock','aʊt əv stɑːk','aʊt əv stɒk','ph.','缺货','Sorry, this size is out of stock.','抱歉，这个尺码缺货。'],
+['loyalty card','ˈlɔɪəlti kɑːrd','ˈlɔɪəlti kɑːd','n.','会员卡','Do you have a loyalty card?','您有会员卡吗？'],
+['window shop','ˈwɪndoʊ ʃɑːp','ˈwɪndəʊ ʃɒp','ph.','逛橱窗（不买）','Let’s just window shop today.','今天我们就逛逛不买了。']]},
 {id:'gym',icon:'🏋️',cn:'运动健身',words:[
 ['workout','ˈwɜːrkaʊt','ˈwɜːkaʊt','n.','训练/锻炼','I do a full-body workout three times a week.','我每周做三次全身训练。'],
 ['muscle','ˈmʌsl','ˈmʌsl','n.','肌肉','Lift weights to build muscle.','举铁可以增肌。'],
@@ -82,7 +93,18 @@ const VOCAB=[
 ['stretch','stretʃ','stretʃ','v./n.','拉伸','Always stretch before you lift.','举铁前一定要拉伸。'],
 ['reps','reps','reps','n.','次数(重复)','Do three sets of ten reps.','做三组，每组十次。'],
 ['sweat','swet','swet','v.','出汗','Don’t be afraid to sweat a little.','别怕出点汗。'],
-['gains','ɡeɪnz','ɡeɪnz','n.(pl)','增肌成果(俚)','Slow gains are still gains.','慢速增肌也是增肌。']]},
+['gains','ɡeɪnz','ɡeɪnz','n.(pl)','增肌成果(俚)','Slow gains are still gains.','慢速增肌也是增肌。'],
+['set','set','set','n.','组','Take a 60-second rest between sets.','组间休息 60 秒。'],
+['cardio','ˈkɑːrdioʊ','ˈkɑːdiəʊ','n.','有氧','I do 20 minutes of cardio to warm up.','我先做 20 分钟有氧热身。'],
+['warm up','wɔːrm ʌp','wɔːm ʌp','ph.','热身','Warm up for five minutes first.','先热身 5 分钟。'],
+['cool down','kuːl daʊn','kuːl daʊn','ph.','放松/拉伸','Don’t skip the cool down.','别跳过放松环节。'],
+['bench press','bentʃ pres','bentʃ pres','n.','卧推','I increased my bench press by 5kg.','我的卧推多了 5 公斤。'],
+['squat','skwɑːt','skwɒt','n./v.','深蹲','Squats are great for legs.','深蹲对腿特别好。'],
+['deadlift','ˈdedlɪft','ˈdedlɪft','n.','硬拉','Deadlifts work your whole back.','硬拉练整片背。'],
+['treadmill','ˈtredmɪl','ˈtredmɪl','n.','跑步机','I ran 5k on the treadmill.','我在跑步机上跑了 5 公里。'],
+['hydrate','ˈhaɪdreɪt','ˈhaɪdreɪt','v.','补水','Drink water to stay hydrated.','多喝水保持水分。'],
+['rest day','rest deɪ','rest deɪ','n.','休息日','Sunday is my rest day.','周日是我的休息日。'],
+['form','fɔːrm','fɔːm','n.','动作姿势','Keep good form to avoid injury.','保持好姿势避免受伤。']]},
 {id:'bank',icon:'🏦',cn:'银行',words:[
 ['account','əˈkaʊnt','əˈkaʊnt','n.','账户','I’d like to open a savings account.','我想开一个储蓄账户。'],
 ['teller','ˈtelər','ˈtelə(r)','n.','柜员','The teller asked for my ID.','柜员问我要身份证件。'],
@@ -92,7 +114,18 @@ const VOCAB=[
 ['rate','reɪt','reɪt','n.','(汇率/利率)','The exchange rate changes daily.','汇率每天都会变。'],
 ['PIN','pɪn','pɪn','n.','密码(卡)','Enter your PIN to continue.','输入密码以继续。'],
 ['ATM','ˌeɪ tiː ˈem','ˌeɪ tiː ˈem','n.','自动取款机','Is there an ATM near here?','这附近有取款机吗？'],
-['form','fɔːrm','fɔːm','n.','表格','Please fill in this form first.','请先填一下这张表。']]},
+['form','fɔːrm','fɔːm','n.','表格','Please fill in this form first.','请先填一下这张表。'],
+['balance','ˈbæləns','ˈbæləns','n.','余额','What’s my account balance?','我的账户余额是多少？'],
+['transfer','trænsˈfɜːr','trænsˈfɜː(r)','v./n.','转账','I want to transfer 500 to my friend.','我想给朋友转 500 元。'],
+['wire','ˈwaɪər','ˈwaɪə(r)','v./n.','电汇','I’ll wire the money today.','我今天电汇过去。'],
+['loan','loʊn','ləʊn','n.','贷款','I applied for a small loan.','我申请了一笔小额贷款。'],
+['interest','ˈɪntrəst','ˈɪntrəst','n.','利息','The interest rate is very low.','利率很低。'],
+['signature','ˈsɪɡnətʃər','ˈsɪɡnətʃə(r)','n.','签名','Please sign your signature here.','请在这里签名。'],
+['branch','bræntʃ','brɑːntʃ','n.','分行','The nearest branch is two blocks away.','最近的分行在两个街区外。'],
+['receipt','rɪˈsiːt','rɪˈsiːt','n.','回执','Keep the receipt for your records.','保留回执作为记录。'],
+['credit card','ˈkredɪt kɑːrd','ˈkredɪt kɑːd','n.','信用卡','Do you accept credit cards?','你们收信用卡吗？'],
+['debit card','ˈdebɪt kɑːrd','ˈdebɪt kɑːd','n.','借记卡','Use your debit card at the ATM.','用借记卡在 ATM 上取款。'],
+['statement','ˈsteɪtmənt','ˈsteɪtmənt','n.','账单','My monthly statement is ready.','我的月度账单已出。']]},
 {id:'airport',icon:'✈️',cn:'机场登机',words:[
 ['boarding pass','ˈbɔːrdɪŋ pæs','ˈbɔːdɪŋ pɑːs','n.','登机牌','Show your boarding pass at the gate.','登机口要出示登机牌。'],
 ['check-in','ˈtʃek ɪn','ˈtʃek ɪn','n./v.','值机','The check-in counter is on the right.','值机柜台在右边。'],
@@ -102,7 +135,18 @@ const VOCAB=[
 ['luggage','ˈlʌɡɪdʒ','ˈlʌɡɪdʒ','n.','行李','How many bags are you checking in?','您托运几件行李？'],
 ['security','sɪˈkjʊrəti','sɪˈkjʊərəti','n.','安检','Take your laptop out at security.','过安检时把电脑拿出来。'],
 ['carry-on','ˈkæri ɒn','ˈkæri ɒn','n.','随身行李','Keep valuables in your carry-on.','贵重物品放随身行李里。'],
-['aisle seat','aɪl siːt','aɪl siːt','n.','过道座位','Can I have an aisle seat, please?','可以给我一个过道座位吗？']]},
+['aisle seat','aɪl siːt','aɪl siːt','n.','过道座位','Can I have an aisle seat, please?','可以给我一个过道座位吗？'],
+['window seat','ˈwɪndoʊ siːt','ˈwɪndəʊ siːt','n.','靠窗座位','I prefer a window seat.','我更喜欢靠窗座位。'],
+['passport','ˈpæspɔːrt','ˈpɑːspɔːt','n.','护照','Your passport, please.','请出示您的护照。'],
+['visa','ˈviːzə','ˈviːzə','n.','签证','Do I need a visa for Japan?','去日本需要签证吗？'],
+['terminal','ˈtɜːrmɪnl','ˈtɜːmɪnl','n.','航站楼','Terminal 3 is for international flights.','3 号航站楼飞国际航班。'],
+['flight','flaɪt','flaɪt','n.','航班','My flight is at 9 p.m.','我的航班是晚上 9 点。'],
+['arrival','əˈraɪvl','əˈraɪvl','n.','到达','Check the arrival board after landing.','落地后看到达信息屏。'],
+['customs','ˈkʌstəmz','ˈkʌstəmz','n.','海关','Go through customs after you land.','落地后过海关。'],
+['overhead bin','ˈoʊvərhed bɪn','ˈəʊvəhed bɪn','n.','行李架','Put your bag in the overhead bin.','把包放进行李架。'],
+['turbulence','ˈtɜːrbjələns','ˈtɜːbjələns','n.','气流颠簸','We hit some turbulence.','我们遇到一些颠簸。'],
+['layover','ˈleɪoʊvər','ˈleɪəʊvə(r)','n.','中途停留','I have a 3-hour layover in Seoul.','我在首尔中途停留 3 小时。'],
+['duty-free','ˈduːti friː','ˈdjuːti friː','n.','免税店','I bought perfume at duty-free.','我在免税店买了香水。']]},
 {id:'dining',icon:'🍜',cn:'餐厅点餐',words:[
 ['menu','ˈmenjuː','ˈmenjuː','n.','菜单','Could I see the menu, please?','可以看一下菜单吗？'],
 ['order','ˈɔːrdər','ˈɔːdə(r)','v./n.','点餐','I’d like to order the set meal.','我想点套餐。'],
@@ -112,7 +156,18 @@ const VOCAB=[
 ['tip','tɪp','tɪp','n.','小费','Is a tip included in the bill?','账单里包含小费吗？'],
 ['takeaway','ˈteɪkəweɪ','ˈteɪkəweɪ','n.','外卖/打包','Can I get this as a takeaway?','这个能打包吗？'],
 ['tasty','ˈteɪsti','ˈteɪsti','adj.','好吃的','This soup is really tasty.','这个汤真好喝。'],
-['dessert','dɪˈzɜːrt','dɪˈzɜːt','n.','甜点','Save some room for dessert!','留点肚子吃甜点！']]},
+['dessert','dɪˈzɜːrt','dɪˈzɜːt','n.','甜点','Save some room for dessert!','留点肚子吃甜点！'],
+['starter','ˈstɑːrtər','ˈstɑːtə(r)','n.','前菜','We’ll have the soup as a starter.','我们点汤作为前菜。'],
+['main course','meɪn kɔːrs','meɪn kɔːs','n.','主菜','What’s today’s main course?','今天的主菜是什么？'],
+['appetizer','ˈæpɪtaɪzər','ˈæpɪtaɪzə(r)','n.','开胃菜','The appetizer was delicious.','开胃菜很美味。'],
+['vegetarian','ˌvedʒəˈteriən','ˌvedʒəˈteəriən','adj./n.','素食','Do you have vegetarian options?','有素食选项吗？'],
+['allergy','ˈælərdʒi','ˈælədʒi','n.','过敏','I have a nut allergy.','我对坚果过敏。'],
+['ingredient','ɪnˈɡriːdiənt','ɪnˈɡriːdiənt','n.','食材','What are the ingredients?','食材有哪些？'],
+['portion','ˈpɔːrʃn','ˈpɔːʃn','n.','份量','The portion is huge.','份量很大。'],
+['served','sɜːrvd','sɜːvd','adj.','几分熟','How is your steak served?','你的牛排几分熟？'],
+['rare','rer','reə(r)','adj.','三分熟','I’d like my steak medium rare.','我的牛排要三分熟。'],
+['refill','ˈriːfɪl','ˈriːfɪl','n./v.','续杯','Can I get a water refill?','能续一杯水吗？'],
+['reservation','ˌrezərˈveɪʃn','ˌrezəˈveɪʃn','n.','预订','I made a reservation for 7 p.m.','我预订了晚上 7 点。']]},
 {id:'travel',icon:'🧳',cn:'旅行问路/酒店',words:[
 ['reservation','ˌrezərˈveɪʃn','ˌrezəˈveɪʃn','n.','预订','I have a reservation under the name Li.','我用李这个名字预订了房间。'],
 ['check in','tʃek ɪn','tʃek ɪn','ph.','办理入住','We’d like to check in, please.','我们想办理入住。'],
@@ -122,7 +177,18 @@ const VOCAB=[
 ['straight','streɪt','streɪt','adv.','笔直地','Go straight and turn left.','直走然后左转。'],
 ['corner','ˈkɔːrnər','ˈkɔːnə(r)','n.','拐角','The hotel is on the corner.','酒店就在拐角处。'],
 ['nearby','ˌnɪrˈbaɪ','ˌnɪəˈbaɪ','adv.','附近','Is there a subway station nearby?','附近有地铁站吗？'],
-['lost','lɔːst','lɒst','adj.','迷路的','I think we’re lost.','我觉得我们迷路了。']]},
+['lost','lɔːst','lɒst','adj.','迷路的','I think we’re lost.','我觉得我们迷路了。'],
+['lobby','ˈlɑːbi','ˈlɒbi','n.','大堂','Meet me in the lobby at 8.','8 点在大堂见我。'],
+['suite','swiːt','swiːt','n.','套房','We booked a suite with a view.','我们订了一间有景观的套房。'],
+['single room','ˈsɪŋɡl ruːm','ˈsɪŋɡl rʊm','n.','单人间','I’d like a single room.','我想要单间。'],
+['double room','ˈdʌbl ruːm','ˈdʌbl rʊm','n.','双人间','A double room, please.','请给我一间双人间。'],
+['breakfast included','ˈbrekfəst ɪnˈkluːdɪd','ˈbrekfəst ɪnˈkluːdɪd','ph.','含早餐','Is breakfast included?','含早餐吗？'],
+['key card','kiː kɑːrd','kiː kɑːd','n.','房卡','Here’s your key card.','这是您的房卡。'],
+['tour','tʊr','tʊə(r)','n.','旅行团','We took a guided tour.','我们报了个导游团。'],
+['sightseeing','ˈsaɪtsiːɪŋ','ˈsaɪtsiːɪŋ','n.','观光','We did some sightseeing today.','我们今天观光了一下。'],
+['souvenir','ˌsuːvəˈnɪr','ˌsuːvəˈnɪə(r)','n.','纪念品','I bought a souvenir for Mom.','我给妈妈买了个纪念品。'],
+['map','mæp','mæp','n.','地图','Do you have a city map?','有城市地图吗？'],
+['subway','ˈsʌbweɪ','ˈsʌbweɪ','n.','地铁','Take the subway to the museum.','坐地铁去博物馆。']]},
 {id:'office',icon:'💼',cn:'职场日常',words:[
 ['meeting','ˈmiːtɪŋ','ˈmiːtɪŋ','n.','会议','We have a meeting at 10 a.m.','我们上午十点开会。'],
 ['deadline','ˈdedlaɪn','ˈdedlaɪn','n.','截止时间','The deadline is this Friday.','截止时间是本周五。'],
@@ -132,7 +198,18 @@ const VOCAB=[
 ['promotion','prəˈmoʊʃn','prəˈməʊʃn','n.','晋升','She got a promotion last month.','她上个月升职了。'],
 ['overtime','ˈoʊvərtaɪm','ˈəʊvətaɪm','n.','加班','I worked overtime twice this week.','这周我加了两次班。'],
 ['bored','bɔːrd','bɔːd','adj.','无聊的','I felt bored in that long meeting.','那个长会很无聊。'],
-['salary','ˈsæləri','ˈsæləri','n.','薪水','The salary comes in on the 10th.','工资十号到账。']]},
+['salary','ˈsæləri','ˈsæləri','n.','薪水','The salary comes in on the 10th.','工资十号到账。'],
+['boss','bɔːs','bɒs','n.','老板','My boss is on vacation this week.','我老板这周在休假。'],
+['client','ˈklaɪənt','ˈklaɪənt','n.','客户','I have a client call at 3.','我 3 点有个客户电话。'],
+['project','ˈprɑːdʒekt','ˈprɒdʒekt','n.','项目','The project launches next month.','这个项目下个月启动。'],
+['agenda','əˈdʒendə','əˈdʒendə','n.','议程','What’s on the agenda?','议程是什么？'],
+['minutes','ˈmɪnɪts','ˈmɪnɪts','n.','会议纪要','Take minutes during the meeting.','开会时做记录。'],
+['feedback','ˈfiːdbæk','ˈfiːdbæk','n.','反馈','Thanks for the feedback.','谢谢反馈。'],
+['resign','rɪˈzaɪn','rɪˈzaɪn','v.','辞职','He resigned last week.','他上周辞职了。'],
+['hire','ˈhaɪər','ˈhaɪə(r)','v.','招聘','We’re hiring three designers.','我们在招 3 个设计师。'],
+['freelance','ˈfriːlæns','ˈfriːlɑːns','adj.','自由职业','She does freelance writing.','她做自由撰稿。'],
+['remote','rɪˈmoʊt','rɪˈməʊt','adj.','远程','I work a remote job.','我做远程工作。'],
+['invoice','ˈɪnvɔɪs','ˈɪnvɔɪs','n.','发票','Please send me the invoice.','请把发票发给我。']]},
 {id:'health',icon:'💊',cn:'就医买药',words:[
 ['appointment','əˈpɔɪntmənt','əˈpɔɪntmənt','n.','预约','I need to make an appointment with the doctor.','我需要预约医生。'],
 ['pharmacy','ˈfɑːrməsi','ˈfɑːməsi','n.','药房','Is there a pharmacy open now?','现在有开着的药房吗？'],
@@ -142,7 +219,18 @@ const VOCAB=[
 ['throat','θroʊt','θrəʊt','n.','喉咙','My throat is sore.','我嗓子疼。'],
 ['rest','rest','rest','n./v.','休息','You need plenty of rest.','你需要多休息。'],
 ['prescription','prɪˈskrɪpʃn','prɪˈskrɪpʃn','n.','处方','This is a prescription medicine.','这是处方药。'],
-['recover','rɪˈkʌvər','rɪˈkʌvə(r)','v.','康复','Drink water and you’ll recover soon.','多喝水，很快就会好。']]}
+['recover','rɪˈkʌvər','rɪˈkʌvə(r)','v.','康复','Drink water and you’ll recover soon.','多喝水，很快就会好。'],
+['headache','ˈhedeɪk','ˈhedeɪk','n.','头痛','I’ve had a headache all day.','我头痛了一整天。'],
+['cough','kɔːf','kɒf','n./v.','咳嗽','I have a bad cough.','我咳得很厉害。'],
+['allergy','ˈælərdʒi','ˈælədʒi','n.','过敏','I have seasonal allergies.','我有季节性过敏。'],
+['insurance','ɪnˈʃʊrəns','ɪnˈʃʊərəns','n.','保险','Does my insurance cover this?','我的保险能报销吗？'],
+['sore','sɔːr','sɔː(r)','adj.','酸痛的','My back is sore.','我背酸。'],
+['injury','ˈɪndʒəri','ˈɪndʒəri','n.','伤','He had a sports injury.','他有运动伤。'],
+['X-ray','ˈeks reɪ','ˈeks reɪ','n.','X 光','I need an X-ray for my ankle.','我的脚踝要照 X 光。'],
+['blood test','blʌd test','blʌd test','n.','验血','The doctor ordered a blood test.','医生开了验血单。'],
+['painkiller','ˈpeɪnkɪlər','ˈpeɪnkɪlə(r)','n.','止痛药','Take a painkiller if it hurts.','痛的话吃片止痛药。'],
+['dose','doʊs','dəʊs','n.','剂量','Follow the dose on the label.','按标签上的剂量服用。'],
+['checkup','ˈtʃekʌp','ˈtʃekʌp','n.','体检','I have my annual checkup tomorrow.','我明天做年度体检。']]}
 ];
 function setById(id){ return VOCAB.find(s=>s.id===id)||VOCAB[0]; }
 
@@ -268,11 +356,13 @@ const WRITE_PROMPTS=[
 ];
 
 /* ---------- 资料库（导入任意文件） ---------- */
-const CATS=['听力','口语','阅读','写作','其他'];
+const CATS=['全部','听力','口语','阅读','写作','词库','教材','美剧','其他'];
+const CAT_COLOR={'听力':'#7d9fae','口语':'#a8956a','阅读':'#6fa394','写作':'#a89f72','词库':'#7d9471','教材':'#8fa493','美剧':'#b39460','其他':'#9aa39b'};
 let fileCache=null;
 async function filesList(){ if(!fileCache){ fileCache=await Z.idb.all(); } return fileCache.filter(f=>f.eng); }
 async function refreshFiles(){ fileCache=null; return filesList(); }
-const EXT_TAG={png:'图',jpg:'图',jpeg:'图',gif:'图',webp:'图',mp4:'视频',mov:'视频',webm:'视频',mp3:'音频',m4a:'音频',wav:'音频',aac:'音频',txt:'文',md:'文',json:'文',pdf:'PDF',doc:'文档',docx:'文档',xls:'表',xlsx:'表',ppt:'演示',pptx:'演示'};
+const EXT_TAG={png:'图',jpg:'图',jpeg:'图',gif:'图',webp:'图',mp4:'视频',mov:'视频',webm:'视频',m4v:'视频',mp3:'音频',m4a:'音频',wav:'音频',aac:'音频',ogg:'音频',txt:'文',md:'文',json:'文',srt:'字幕',vtt:'字幕',pdf:'PDF',doc:'文档',docx:'文档',xls:'表',xlsx:'表',csv:'表',ppt:'演示',pptx:'演示'};
+const EXT_COLOR={png:'#7d9fae',jpg:'#7d9fae',jpeg:'#7d9fae',gif:'#7d9fae',webp:'#7d9fae',mp4:'#b39460',mov:'#b39460',webm:'#b39460',m4v:'#b39460',mp3:'#a8956a',m4a:'#a8956a',wav:'#a8956a',aac:'#a8956a',ogg:'#a8956a',pdf:'#c97a6e',doc:'#c97a6e',docx:'#c97a6e',txt:'#8a96a8',md:'#8a96a8',srt:'#8a96a8',vtt:'#8a96a8'};
 
 /* ========================================================= */
 function render(root){
@@ -372,21 +462,99 @@ function writeHTML(){
     +'<div class="card flat"><div class="small" style="font-weight:600">写作小贴士（提升口语的地基）</div><div class="muted small mt6">写作 → 朗读 → 录音：把写好的内容读出来，就是最好的口语输出练习。写 3 句英文，比背 30 个单词更有用。</div></div>';
 }
 function filesHTML(){
-  const cats=CATS.map(c=>'<button class="scnChip" data-fcat="'+c+'" style="'+(Z.cssV(Z.byId.eng.c))+'">'+c+'</button>').join('');
-  return '<div class="row mb8"><div style="font-weight:700">📁 我的学习资料</div><button class="btn pri sm" data-up="1" style="margin-left:auto">⬆️ 导入文件</button></div>'
-    +'<div class="card flat"><div class="muted small">支持 <b>文档 / 图片 / 视频 / 音频 / PDF / 表格 / 演示文稿</b> 等任意格式。文件只存在你自己的设备浏览器里，可随时播放、查看、删除。</div></div>'
+  if(typeof ui.fcat==='undefined') ui.fcat='全部';
+  if(typeof ui.fsrc==='undefined') ui.fsrc='';
+  const cats=CATS.map(c=>'<button class="scnChip '+(ui.fcat===c?'on':'')+'" data-fcat="'+c+'" style="'+(ui.fcat===c?(Z.cssV(CAT_COLOR[c]||Z.byId.eng.c)):'')+'">'+c+'</button>').join('');
+  return '<div class="row mb8"><div style="font-weight:700">📁 我的英语资料库</div>'
+    +'<button class="btn softB sm" data-fmulti="1" style="margin-left:auto;margin-right:6px">☑️ 多选</button>'
+    +'<button class="btn pri sm" data-up="1">⬆️ 导入文件</button></div>'
+    +'<div class="card flat mb8" style="background:#f6f8ee"><div class="muted small">支持 <b>文档/图片/视频/音频/PDF/表格/演示/字幕</b> 任意格式；导入后可分类、重命名、移动分类、批量删除。文件存在你的浏览器本地，云同步时会同步文件清单与分类（不会上传文件二进制，节省流量）。</div></div>'
+    +'<div class="scnChips">'+cats+'</div>'
+    +'<div class="row mb8"><input id="fSrch" class="ipt" placeholder="🔍 搜索文件名…" value="'+Z.esc(ui.fsrc)+'" style="flex:1;margin-right:6px"/>'
+    +'<button class="btn ghost sm" data-fsrc-clear="1" data-fsrc="">清除</button></div>'
+    +'<div class="fSelBar" id="fSelBar"><span class="count" id="fSelCount">0</span> 个已选'
+    +'<button class="btn ghost sm" data-fmall="1">全选/取消</button>'
+    +'<button class="btn softB sm" data-fmdel="1">🗑 删除选中</button>'
+    +'<button class="btn ghost sm" data-fmulti="1">取消</button>'
+    +'</div>'
     +'<div id="fileList"><div class="muted" style="padding:10px 0">加载中…</div></div>';
 }
 async function loadFiles(root){
   const box=Z.$('#fileList',root); if(!box)return;
   const all=await refreshFiles();
-  if(!all.length){ box.innerHTML='<div class="empty"><div class="big">🗂️</div><div>还没有导入资料</div><div class="muted">点右上「导入文件」，把英语学习资料传进来</div></div>'; return; }
-  box.innerHTML=all.slice().sort((a,b)=>b.ts-a.ts).map(f=>{
-    const ext=(f.name.split('.').pop()||'').toLowerCase();
-    const tg=EXT_TAG[ext]||'档';
-    return '<div class="fileRow" data-fid="'+f.id+'"><span class="tag">'+tg+'</span><div class="fname">'+Z.esc(f.name)+'<div class="muted small">'+Z.esc(f.cat||'')+' · '+Z.fileSize(f.size)+'</div></div>'
-      +'<button class="iconBtn" data-fplay="1" title="查看/播放">👁</button><button class="iconBtn" data-fdl="1" title="下载">⬇️</button><button class="iconBtn" data-fdel="1" title="删除">🗑</button></div>';
-  }).join('');
+  ui.fmultiOn=!!ui.fmultiOn;
+  if(!all.length){ box.innerHTML='<div class="empty"><div class="big">🗂️</div><div>资料库还是空的</div><div class="muted">点右上「导入文件」开始添加——图片、音频、视频、字幕、PDF、文档都能放进来</div></div>'; syncSelBar(root); return; }
+  filterFiles(root);
+}
+function filterFiles(root){
+  const box=Z.$('#fileList',root); if(!box)return;
+  filesList().then(all=>{
+    const list=all.slice().sort((a,b)=>b.ts-a.ts);
+    const cat=ui.fcat||'全部';
+    const q=(ui.fsrc||'').toLowerCase().trim();
+    const filtered=list.filter(f=>{
+      const okCat=cat==='全部' || (f.cat||'其他')===cat;
+      const okQ=!q || f.name.toLowerCase().indexOf(q)>=0;
+      return okCat && okQ;
+    });
+    if(!filtered.length){ box.innerHTML='<div class="empty"><div class="big">🔎</div><div>没有匹配的资料</div><div class="muted">换个分类或清空搜索词试试</div></div>'; syncSelBar(root); return; }
+    box.innerHTML=filtered.map(f=>{
+      const ext=(f.name.split('.').pop()||'').toLowerCase();
+      const tg=EXT_TAG[ext]||'档';
+      const tagColor=EXT_COLOR[ext]||'#7d9fae';
+      const catColor=CAT_COLOR[f.cat||'其他']||'#9aa39b';
+      const dt=new Date(f.ts); const dtStr=(dt.getMonth()+1)+'/'+dt.getDate();
+      return '<div class="fileRow" data-fid="'+f.id+'">'
+        +'<span class="fpick" data-fpick="1" title="选中"></span>'
+        +'<span class="tag" style="--c-soft:'+Z.rgba(tagColor,.18)+';--c-deep:'+tagColor+'">'+tg+'</span>'
+        +'<div class="fname"><div>'+Z.esc(f.name)+'</div>'
+        +'<div class="muted small"><span style="color:'+catColor+'">●</span> '+Z.esc(f.cat||'未分类')+' · '+Z.fileSize(f.size)+' · '+dtStr+'</div></div>'
+        +'<button class="iconBtn" data-frename="1" title="重命名">✏️</button>'
+        +'<button class="iconBtn" data-fcat2="1" data-fcat-val="" title="移动分类" style="position:relative">📂</button>'
+        +'<button class="iconBtn" data-fplay="1" title="查看/播放">👁</button>'
+        +'<button class="iconBtn" data-fdl="1" title="下载">⬇️</button>'
+        +'<button class="iconBtn" data-fdel="1" title="删除">🗑</button></div>';
+    }).join('');
+    if(ui.fmultiOn){ box.querySelectorAll('[data-fpick]').forEach(c=>c.classList.add('show')); }
+    syncSelBar(root);
+  });
+}
+function syncSel(pickEl){
+  const row=pickEl.closest('.fileRow');
+  if(pickEl.classList.contains('sel')){ row.style.outline='2px solid var(--blue)'; row.style.borderRadius='14px'; }
+  else { row.style.outline=''; }
+  const root=pickEl.closest('.viewWrap');
+  syncSelBar(root);
+}
+function syncSelBar(root){
+  if(!root)return;
+  const bar=Z.$('#fSelBar',root); if(!bar)return;
+  const picked=root.querySelectorAll('[data-fpick].sel.sel, .fileRow [data-fpick].sel');
+  const n=root.querySelectorAll('[data-fpick].sel').length;
+  Z.$('#fSelCount',bar).textContent=n;
+  if(ui.fmultiOn) bar.classList.add('show'); else bar.classList.remove('show');
+}
+async function renameFile(fid,root){
+  const all=await Z.idb.all(); const f=all.find(x=>x.id===fid); if(!f){ Z.toast('文件不存在'); return; }
+  Z.modalForm('重命名文件','<label>新文件名</label><input name="newName" value="'+Z.esc(f.name)+'" style="width:100%"/>',data=>{
+    if(!data.newName || !data.newName.trim()){ Z.toast('名字不��为空'); return; }
+    f.name=data.newName.trim(); f.uTs=Date.now();
+    Z.idb.put(f).then(()=>{ fileCache=null; filterFiles(root); Z.toast('已重命名'); Z.closeModal(); });
+  });
+}
+async function setFileCat(fid,newCat,root){
+  const all=await Z.idb.all(); const f=all.find(x=>x.id===fid); if(!f){ Z.toast('文件不存在'); return; }
+  // 弹出分类选择
+  const opts=CATS.filter(c=>c!=='全部').map(c=>'<button class="scnChip" data-set-cat="'+c+'" style="background:'+CAT_COLOR[c]+';color:#fff;border:0">'+c+'</button>').join('');
+  Z.modal({ title:'移动到分类', body:'<div class="row" style="flex-wrap:wrap;gap:6px">'+opts+'</div>',
+    acts:[{label:'取消',key:'x',cls:'ghost',fn:Z.closeModal}] });
+  // 单次绑定点击
+  const mb=Z.$('.mbody');
+  mb.onclick=e=>{
+    const btn=e.target.closest('[data-set-cat]'); if(!btn)return;
+    f.cat=btn.dataset.setCat; f.uTs=Date.now();
+    Z.idb.put(f).then(()=>{ fileCache=null; filterFiles(root); Z.toast('已移动到「'+f.cat+'」'); Z.closeModal(); });
+  };
 }
 function previewFile(root,f){
   const ext=(f.name.split('.').pop()||'').toLowerCase();
@@ -403,11 +571,13 @@ function previewFile(root,f){
     acts:[ {label:'下载',key:'d',cls:'softB',fn:()=>{ const a=document.createElement('a'); a.href=url; a.download=f.name; a.click(); }},{label:'关闭',key:'x',cls:'ghost',fn:()=>{URL.revokeObjectURL(url);Z.closeModal();}} ] });
 }
 function bindBody(root){
-  const b=Z.$('#engBody',root);
-  if(!b)return;
-  if(b.dataset.bound)return;   // 同一 #engBody 只绑定一次事件（内容刷新不重复绑定）
-  b.dataset.bound='1';
-  b.onclick=e=>{
+  // 关键：把点击/输入事件绑到 root 整个 viewWrap 上——
+  // 因为 .engTabs 和 #engBody 是兄弟节点、点击事件不会跨兄弟节点冒泡，
+  // 原代码绑到 #engBody 上时 .engTabs 里的按钮全部点不动（iOS 端表现为「只有单词能点」）
+  if(!root)return;
+  if(root.dataset.engBounded)return;
+  root.dataset.engBounded='1';
+  const onClick=e=>{
     const t=e.target.closest('[data-tab]'); if(t){ ui.tab=t.dataset.tab; if(ui.tab==='dlg')ui.dlg=ui.dlg||0; if(ui.tab==='listen')ui.listeningDlg=ui.listeningDlg||0; stopSpeak();
       root.querySelectorAll('.engTab').forEach(x=>x.classList.toggle('on', x.dataset.tab===ui.tab));
       body(root); return; }
@@ -434,14 +604,24 @@ function bindBody(root){
     const pr=e.target.closest('[data-prompt]'); if(pr){ body(root); return; }
     const wc=e.target.closest('[data-wcopy]'); if(wc){ const t=Z.$('#wText',root); if(t&&t.value){ if(navigator.clipboard&&navigator.clipboard.writeText){navigator.clipboard.writeText(t.value).then(()=>Z.toast('已复制'));} else Z.toast('长按选择复制'); } return; }
     const up=e.target.closest('[data-up]'); if(up){ doUpload(root); return; }
-    const fc=e.target.closest('[data-fcat]'); if(fc){ /* 预留分类过滤 */ return; }
+    const fcat=e.target.closest('[data-fcat]'); if(fcat){ ui.fcat=fcat.dataset.fcat; root.querySelectorAll('[data-fcat]').forEach(x=>x.classList.toggle('on', x.dataset.fcat===ui.fcat)); loadFiles(root); return; }
+    const fsrc=e.target.closest('[data-fsrc]'); if(fsrc){ ui.fsrc=fsrc.dataset.fsrc; loadFiles(root); return; }
+    const fclear=e.target.closest('[data-fsrc-clear]'); if(fclear){ ui.fsrc=''; const ip=Z.$('#fSrch',root); if(ip)ip.value=''; loadFiles(root); return; }
+    const fmulti=e.target.closest('[data-fmulti]'); if(fmulti){ ui.fmultiOn=!ui.fmultiOn; root.querySelectorAll('[data-fpick]').forEach(c=>c.classList.toggle('show', ui.fmultiOn)); syncSelBar(root); return; }
+    const fpick=e.target.closest('[data-fpick]'); if(fpick){ fpick.classList.toggle('sel'); syncSel(fpick); return; }
+    const fmall=e.target.closest('[data-fmall]'); if(fmall){ const allOn=!root.querySelector('.fileRow [data-fpick].sel'); root.querySelectorAll('[data-fpick]').forEach(c=>{ c.classList.toggle('sel',allOn); syncSel(c); }); return; }
+    const fmdel=e.target.closest('[data-fmdel]'); if(fmdel){ const ids=Array.from(root.querySelectorAll('[data-fpick].sel')).map(c=>c.closest('.fileRow').dataset.fid); if(!ids.length){ Z.toast('先勾选文件'); return; } Z.confirmBox('删除选中的 '+ids.length+' 个文件？',{danger:true}).then(async y=>{ if(y){ for(const id of ids){ await Z.idb.del(id); } fileCache=null; ui.fmultiOn=false; body(root); Z.toast('已删除 '+ids.length+' 个'); } }); return; }
+    const frename=e.target.closest('[data-frename]'); if(frename){ const fid=frename.closest('.fileRow').dataset.fid; renameFile(fid,root); return; }
+    const fcat2=e.target.closest('[data-fcat2]'); if(fcat2){ const fid=fcat2.closest('.fileRow').dataset.fid; setFileCat(fid,fcat2.dataset.fcat2,root); return; }
     const fplay=e.target.closest('[data-fplay]'); if(fplay){ const fid=fplay.closest('.fileRow').dataset.fid; getFile(fid,root,f=>previewFile(root,f)); return; }
     const fdl=e.target.closest('[data-fdl]'); if(fdl){ const fid=fdl.closest('.fileRow').dataset.fid; getFile(fid,root,f=>{ const a=document.createElement('a'); a.href=URL.createObjectURL(f.blob); a.download=f.name; a.click(); }); return; }
     const fdel=e.target.closest('[data-fdel]'); if(fdel){ const fid=fdel.closest('.fileRow').dataset.fid; Z.confirmBox('删除这份资料？',{danger:true}).then(async y=>{ if(y){ await Z.idb.del(fid); fileCache=null; body(root); Z.toast('已删除'); } }); return; }
   };
-  b.addEventListener('input',e=>{
+  root.addEventListener('click',onClick);
+  root.addEventListener('input',e=>{
     if(e.target.id==='lNote'){ Z.store.s('lNote'+ui.listeningDlg,e.target.value); }
     if(e.target.id==='wText'){ const m=Z.store.g('writeMap',{}); m[Z.todayISO()]=e.target.value; Z.store.s('writeMap',m); }
+    if(e.target.id==='fSrch'){ ui.fsrc=e.target.value; filterFiles(root); }
   });
 }
 async function getFile(fid,root,cb){
@@ -490,26 +670,53 @@ function quizHTML(set){
   return '<div id="qWrap">'+quizQuestion(set)+'</div>';
 }
 function quizQuestion(set){
-  if(!ui.qSet||ui.qSet!==set.id){ ui.qSet=set.id; ui.qDone=0; ui.qRight=0; }
+  if(!ui.qSet||ui.qSet!==set.id){ ui.qSet=set.id; ui.qDone=0; ui.qRight=0; ui.qOpts=null; }
   const words=set.words;
   if(ui.qDone>=words.length){
-    const ok=ui.qRight;
-    ui.qSet=null; ui.q=null;
-    return '<div style="font-size:18px;font-weight:700;margin-bottom:6px">自测完成！</div><div>答对 <b style="color:var(--c,#5f7a54)">'+ok+'</b> / '+words.length+'</div><button class="btn pri mt10" data-mode="quiz" data-re="1" type="button">再测一次</button><button class="btn ghost mt10" data-mode="list" type="button">返回列表</button>';
+    const ok=ui.qRight, total=words.length;
+    ui.qSet=null; ui.qOpts=null;
+    const pct=total?Math.round(ok*100/total):0;
+    const msg=pct>=90?'神了！保持这个手感 🎉':pct>=70?'不错，再练两个不会的就满分了 💪':pct>=50?'加油，多看例句就能上 80% ✨':'别灰心，先听例句再选效果更好 🌱';
+    return '<div style="font-size:18px;font-weight:700;margin-bottom:6px">自测完成！</div>'
+      +'<div style="margin:6px 0">答对 <b style="color:'+Z.byId.eng.c+'">'+ok+'</b> / '+total+'　（正确率 '+pct+'%）</div>'
+      +'<div class="muted small mt6">'+msg+'</div>'
+      +'<div class="row" style="justify-content:center;margin-top:14px"><button class="btn pri" data-mode="quiz" data-re="1" type="button">🔄 再测一次</button><button class="btn ghost" data-mode="list" type="button">📋 返回列表</button></div>';
   }
-  // 选未测过的词
+  // 选未测过的词 + 3 个干扰项
   const w=words[ui.qDone];
   const wrong=words.filter(x=>x[0]!==w[0]);
-  const opts=shuffle([w].concat(pick(wrong,3)));
-  return '<div style="font-size:22px;font-weight:800;margin:10px 0 4px">🇺🇸 /'+w[1]+'/　🇬🇧 /'+w[2]+'/<br><span style="font-size:26px">“'+Z.esc(w[0])+'”</span></div>'
+  if(!ui.qOpts||ui.qOptsDone!==ui.qDone){
+    ui.qOpts=shuffle([w].concat(pick(wrong,3)));
+    ui.qOptsDone=ui.qDone;
+  }
+  const correctIdx=ui.qOpts.findIndex(o=>o[0]===w[0]);
+  return '<div style="font-size:22px;font-weight:800;margin:10px 0 4px">🇺🇸 /'+w[1]+'/　🇬🇧 /'+w[2]+'/<br><span style="font-size:28px">“'+Z.esc(w[0])+'”</span></div>'
     +'<div class="muted small" style="margin-bottom:14px">选出正确的中文意思（'+(ui.qDone+1)+' / '+words.length+' · 已答对 '+ui.qRight+'）</div>'
-    +opts.map(o=>'<button class="btn ghost" style="display:block;width:100%;margin:6px 0" data-qa="'+o[4]+'">'+o[3]+' '+o[4]+'</button>').join('');
+    +ui.qOpts.map((o,i)=>'<button class="btn ghost qOpt" style="display:block;width:100%;margin:6px 0;text-align:left" data-qa="'+i+'" data-correct="'+correctIdx+'"><b style="margin-right:6px;color:var(--muted)">'+(String.fromCharCode(65+i))+'.</b> '+Z.esc(o[3])+' '+Z.esc(o[4])+'</button>').join('');
 }
-function answerQuiz(ansCn,root){
-  const set=setById(ui.set); const w=set.words[ui.qDone];
-  if(ansCn===w[4]){ ui.qRight++; Z.toast('✅ 答对了！ '+w[5]); } else { Z.toast('❌ 正确答案是：'+w[3]+' '+w[4]+' → '+w[6]); }
-  ui.qDone++;
-  const wrap=Z.$('#qWrap',root); if(wrap)wrap.innerHTML=quizQuestion(set);
+function answerQuiz(optIdx,root){
+  const set=setById(ui.set);
+  const w=set.words[ui.qDone];
+  const opts=ui.qOpts;
+  const chosen=opts&&opts[optIdx];
+  // 即时视觉反馈：高亮对/错
+  const btns=root.querySelectorAll('.qOpt');
+  btns.forEach((b,i)=>{
+    const isCorrect=opts&&opts[i]&&opts[i][0]===w[0];
+    if(isCorrect) b.classList.add('qRight');
+    if(i===optIdx && !isCorrect) b.classList.add('qWrong');
+    b.disabled=true;
+  });
+  if(chosen && chosen[0]===w[0]){
+    ui.qRight++;
+    Z.toast('✅ 答对了！'+w[5]);
+  } else {
+    Z.toast('❌ 正确是：'+w[3]+' '+w[4]+'　'+w[6]);
+  }
+  setTimeout(()=>{
+    ui.qDone++;
+    const wrap=Z.$('#qWrap',root); if(wrap)wrap.innerHTML=quizQuestion(set);
+  },650);
 }
 function shuffle(a){ for(let i=a.length-1;i>0;i--){ const j=Math.floor(Math.random()*(i+1)); [a[i],a[j]]=[a[j],a[i]]; } return a; }
 function pick(arr,n){ return shuffle(arr.slice()).slice(0,n); }
