@@ -335,6 +335,24 @@ function settingsView(){
     return bg.url? '<div class="bgThumb" id="bgPrev"><img src="'+bg.url+'"></div>'
       :'<div class="bgThumb" id="bgPrev"><span>暂无背景 · 点下方按钮上传一张你喜欢的图片<br>支持大小 / 模糊 / 透明度调节</span></div>';
   }
+  function fmtTs(t){ if(!t)return'从未'; const d=new Date(t); return (d.getMonth()+1)+'/'+d.getDate()+' '+d.getHours()+':'+String(d.getMinutes()).padStart(2,'0'); }
+  function syncPanel(){
+    const s=(Z.sync&&Z.sync.status&&Z.sync.status())||{};
+    const on=!!(s.token && s.gistId);
+    const st=on?(s.lastError?'<span style="color:#b4534a">⚠️ '+Z.esc(s.lastError)+'</span>':'<span style="color:#5d7a52">✅ 已连接</span>'):'未配置';
+    const body=on?
+      '<div class="muted small mb8">设备名：<b>'+Z.esc(s.device||'-')+'</b>　·　状态：'+st+'</div>'
+      +'<div class="muted small mb8">最近上传：<b>'+fmtTs(s.lastPushAt)+'</b>　最近拉取：<b>'+fmtTs(s.lastPullAt)+'</b></div>'
+      +'<div class="row"><button class="btn pri" id="syncNowBtn">🔄 立即同步</button>'
+      +'<button class="btn softB" id="syncUnbindBtn">解除绑定</button></div>'
+      +'<div class="muted small mt8">💡 在另一端配置相同的 Token 即可双向同步；自动每 30 秒后台轮询。本端任何写入 1.5 秒内会上传。</div>'
+      :'<div class="muted small mb8">用你的 GitHub Personal Access Token（需 <b>gist</b> 权限）创建一个私有 Gist 作为同步介质，所有数据自动双向同步。</div>'
+      +'<label class="muted small">GitHub Token（含 gist 权限）</label>'
+      +'<input id="syncPat" type="password" placeholder="ghp_xxxxxxxxxxxxxxxxxxxx" class="ipt" style="width:100%;margin:6px 0">'
+      +'<div class="row"><button class="btn pri" id="syncSetupBtn">🔗 绑定并开启云同步</button></div>'
+      +'<div class="muted small mt8">📌 <a href="https://github.com/settings/tokens/new?scopes=gist&description=zhaoline-workbench" target="_blank" style="color:var(--c,#5f7a54)">点此打开 GitHub → 生成 Token（勾 gist）</a>；可设永不过期。</div>';
+    return '<div class="setCard"><h3>☁️ 云同步（GitHub Gist）</h3>'+body+'</div>';
+  }
   function render(){
     const bg=Z.settings.bg;
     const $=Z.$;
@@ -351,13 +369,14 @@ function settingsView(){
       +'<div class="row mt10"><button class="pill" id="bgPosC">居中</button><button class="pill" id="bgPosT">顶部</button><button class="pill" id="bgPosB">底部</button></div>';
     }
     h+='</div>';
-    h+='<div class="setCard"><h3>💾 数据备份</h3><p class="muted small">数据保存在当前浏览器本地（不同设备数据相互独立）。可导出备份文件，在另一台设备打开本工作台后导入，即可同步全部内容。</p>'
-      +'<div class="row"><button class="btn softB" id="expData">⬇️ 导出备份（下载到本地）</button><button class="btn softB" id="impData">⬆️ 导入备份</button></div></div>';
+    h+=syncPanel();
+    h+='<div class="setCard"><h3>💾 离线备份（不依赖云）</h3><p class="muted small">把全部数据导出为 JSON 文件，可在另一台设备导入恢复（不会清空云端数据，互为补充）。</p>'
+      +'<div class="row"><button class="btn softB" id="expData">⬇️ 导出备份</button><button class="btn softB" id="impData">⬆️ 导入备份</button></div></div>';
     h+='<div class="setCard"><h3>🧭 使用提示</h3><div class="muted small" style="line-height:2">'
       +'· 电脑端：浏览器打开即可用；本应用支持 <b>下载到本地离线运行</b>（见随包说明）。<br>'
       +'· 苹果手机：用 Safari 打开部署网址 → 点「分享」→「添加到主屏幕」，图标和名字会生成一个像原生 App 的入口，可离线日常使用。<br>'
       +'· 左侧状态栏第 2~9 项可互相「衔接」，串起：灵感 → 拆解 → 文案 → 日历发布 → 数据复盘 的完整链路。<br>'
-      +'· 背景图片、任务、词库等全部只存在你的浏览器里，不上传任何服务器。</div></div>';
+      +'· 云同步可选：配置一次 GitHub Token，电脑/手机数据近实时互通；离线数据始终可用，不上传任何服务器（除非你主动开启云同步）。</div></div>';
     h+='<div class="setCard" style="text-align:center;opacity:.75"><div class="muted small">zhaoline工作台 · 樱桃每天运转 🍒<br>莫兰迪色系 · 移动优先 · 本地优先</div></div>';
     w.innerHTML=h;
 
@@ -369,6 +388,9 @@ function settingsView(){
       if(t.id==='bgPosC'||t.id==='bgPosT'||t.id==='bgPosB'){ Z.settings.bg.pos=t.id==='bgPosC'?'center center':t.id==='bgPosT'?'50% 18%':'50% 82%'; Z.saveSettings(); Z.applyBg(); render(); return; }
       if(t.id==='expData'){ const all=Z.store.exportAll(); const blob=new Blob([JSON.stringify(all,null,1)],{type:'application/json'}); const a=document.createElement('a'); a.href=URL.createObjectURL(blob); a.download='zhaoline工作台-备份-'+Z.todayISO()+'.json'; a.click(); URL.revokeObjectURL(a.href); Z.toast('备份文件已开始下载'); return; }
       if(t.id==='impData'){ Z.pickFile('.json,application/json',false,files=>{ const f=files[0]; if(!f)return; const r=new FileReader(); r.onload=()=>{ try{ const o=JSON.parse(r.result); Z.store.importAll(o); Z.toast('✅ 导入成功，内容已恢复'); setTimeout(()=>location.reload(),600); }catch(err){ Z.toast('文件格式不正确'); } }; r.readAsText(f); }); return; }
+      if(t.id==='syncSetupBtn'){ const inp=Z.$('#syncPat',w); const tok=(inp&&inp.value||'').trim(); if(!tok){ Z.toast('请先粘贴 Token'); return; } Z.toast('正在创建 Gist…'); Z.sync.setup(tok).then(()=>{ Z.toast('✅ 同步已开启'); render(); }).catch(err=>{ Z.toast('❌ '+Z.esc(String(err.message||err))); }); return; }
+      if(t.id==='syncNowBtn'){ Z.toast('正在同步…'); Z.sync.syncNow().then(n=>{ Z.toast('✅ 已同步 · 本次拉取更新 '+(n||0)+' 项'); render(); }).catch(err=>{ Z.toast('❌ '+Z.esc(String(err.message||err))); }); return; }
+      if(t.id==='syncUnbindBtn'){ Z.confirmBox('解除云同步？本端数据保留，只是停止与云端互相同步。',{danger:true}).then(y=>{ if(y){ Z.sync.unbind(); Z.toast('已解除绑定'); render(); } }); return; }
     };
     w.addEventListener('input',e=>{
       const t=e.target;
@@ -376,7 +398,7 @@ function settingsView(){
       if(t.id==='bgBlur'){ Z.settings.bg.blur=+t.value; t.nextElementSibling.textContent=t.value+'px'; Z.saveSettings(); Z.applyBg(); }
       if(t.id==='bgOp'){ Z.settings.bg.op=+t.value; t.nextElementSibling.textContent=+t.value; Z.saveSettings(); Z.applyBg(); }
     });
-    return {title:'工作台设置', sub:'背景 / 备份 / 使用说明', acts:''};
+    return {title:'工作台设置', sub:'背景 / 云同步 / 备份 / 使用说明', acts:''};
   }
   Z.regView('settings',(root)=>render(),()=>{});
 }
