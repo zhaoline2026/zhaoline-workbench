@@ -25,15 +25,9 @@ function init(){
   Z.applyBg();
   Z.buildNav();
 
-  /* 侧栏底部快捷按钮（项目库 / 设置）直接绑定，保证任何情况下都能跳转 */
-  Z.$$('#side .sideBtn').forEach(b=>{
-    b.onclick=ev=>{ ev.stopPropagation(); Z.go(b.dataset.go); };
-  });
-
-  /* 兜底：页面中任何带 data-go 的元素（如弹层/空态里的跳转） */
+  /* data-go 导航已由 base.js 的全局 capture 点击统一接管（含原生 <a href="#/"> 兜底），
+     这里只保留非导航类事件委托：头部动作 [data-hact] */
   document.addEventListener('click',e=>{
-    const el=e.target.closest('[data-go]');
-    if(el){ Z.go(el.dataset.go); }
     const h=e.target.closest('[data-hact]');
     if(h){ const key=h.dataset.hact; if(Z.hacts&&Z.hacts[key]){ Z.hacts[key](); } }
   });
@@ -47,8 +41,9 @@ function init(){
   /* Esc 关闭 */
   document.addEventListener('keydown',e=>{ if(e.key==='Escape'){ Z.closeModal(); closeSide(); } });
 
-  /* 默认进入 Todo */
-  Z.go('todo');
+  /* 默认进入：优先读地址栏 hash（如 #/gym），否则 To do list */
+  const hm=(location.hash||'').match(/^#\/([A-Za-z0-9]+)/);
+  Z.go(hm?hm[1]:'todo');
   if(ZCore)ZCore.refreshBadges();
 
   /* PWA 离线 */
