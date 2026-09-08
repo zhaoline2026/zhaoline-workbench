@@ -52,7 +52,9 @@ body.bg-on #app{background:linear-gradient(180deg,rgba(232,237,224,.6),rgba(224,
 .navGroup{font-size:10px;letter-spacing:1px;color:var(--muted);padding:10px 8px 4px;display:flex;align-items:center;gap:6px}
 .navGroup::after{content:"";flex:1;height:1px;background:var(--line)}
 .navItem{display:flex;align-items:center;gap:10px;width:100%;text-align:left;border:0;background:transparent;color:var(--ink-2);
-  padding:9px 10px;margin:1px 0;border-radius:12px;cursor:pointer;font-size:14px;font-family:inherit;transition:.15s}
+  padding:9px 10px;margin:1px 0;border-radius:12px;cursor:pointer;font-size:14px;font-family:inherit;transition:.15s;
+  text-decoration:none;-webkit-tap-highlight-color:transparent;touch-action:manipulation;box-sizing:border-box}
+.navItem:active{background:rgba(255,255,255,.8)}
 .navItem:hover{background:rgba(255,255,255,.55)}
 .navItem.on{background:#fff;box-shadow:var(--shadow-s);color:var(--ink);font-weight:600}
 .navItem .no{font-size:9.5px;color:var(--muted);width:13px;text-align:right;font-variant-numeric:tabular-nums}
