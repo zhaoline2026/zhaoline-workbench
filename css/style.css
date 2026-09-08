@@ -207,6 +207,16 @@ label.f{display:block;font-size:12px;color:var(--muted);margin:12px 0 5px;font-w
 .vWord .cn{font-size:13px;color:var(--ink-2);background:var(--card-2);border-radius:8px;padding:2px 8px}
 .vWord .ex{font-size:12px;color:var(--muted);width:100%;line-height:1.5}
 .vWord .spk{margin-left:auto;display:flex;gap:4px}
+.qOpt.qRight{background:#d6ead4 !important;border-color:#7d9471 !important;color:#3d5a35 !important;font-weight:600}
+.qOpt.qWrong{background:#f3d8d3 !important;border-color:#c97a6e !important;color:#7a3a30 !important;text-decoration:line-through}
+.qOpt:disabled{cursor:default}
+.fpick{display:none;width:18px;height:18px;border:2px solid var(--line);border-radius:50%;background:#fff;cursor:pointer;flex:0 0 auto}
+.fpick.show{display:inline-flex;align-items:center;justify-content:center}
+.fpick.sel{background:var(--blue);border-color:var(--blue)}
+.fpick.sel::after{content:'✓';color:#fff;font-size:12px;font-weight:700}
+.fSelBar{display:none;align-items:center;gap:8px;background:var(--card-2);border-radius:12px;padding:8px 12px;margin-bottom:10px}
+.fSelBar.show{display:flex}
+.fSelBar .count{font-weight:700}
 .spkB{width:28px;height:28px;border-radius:9px;border:0;background:#fff;cursor:pointer;box-shadow:var(--shadow-s);font-size:12px}
 .spkB.us{color:var(--blue-d)}.spkB.uk{color:var(--clay-d)}
 .dlgLine{display:flex;gap:8px;margin-bottom:6px;align-items:flex-start}
